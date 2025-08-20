@@ -1,0 +1,30 @@
+.{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: linear-gradient(to right, #ffc0cb, #add8e6);
+    padding: 25px;
+    margin: 0%;
+
+}
+@font-face {
+    font-family:'MinhaFonte';
+    src: url('fonts/Midfielder.ttf') format('truetype');
+}
+header h1{
+    text-align: center;
+    font-family: MinhaFonte;
+    
+
+
+}
+body{
+      font-family: Arial, sans-serif;
+      
+      margin: 0px;
+    }
+label, input, button, p {
+      display: block;
+      margin: 20px 0;
+    }
