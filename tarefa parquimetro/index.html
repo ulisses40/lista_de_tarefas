@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parquímetro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>PARQUÍMETRO</h1>
+    <table>
+    <caption>💰 Tabela de Parquímetro</caption>
+    <thead>
+      <tr>
+        <th>Tempo</th>
+        <th>Valor (R$)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>30 minutos</td>
+        <td>1,00</td>
+      </tr>
+      <tr>
+        <td>60 minutos</td>
+        <td>1,75</td>
+      </tr>
+      <tr>
+        <td>120 minutos</td>
+        <td>3,00</td>
+      </tr>
+    </tbody>
+  </table>
+ <h1>🅿️ Calculadora de Parquímetro</h1>
+  <p>Insira o valor em reais:</p>
+  <input type="number" id="valor" step="0.01" min="0" placeholder="Ex: 3.50">
+  <button onclick="calcularTempo()">Calcular Tempo</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function calcularTempo() {
+      const valor = parseFloat(document.getElementById("valor").value);
+      const resultado = document.getElementById("resultado");
+
+      const preco30 = 1.00;
+      const preco60 = 1.75;
+      const preco120 = 3.00;
+      let tempo = 0;
+
+      if (valor >= preco120) {
+        tempo = Math.floor((valor / preco120) * 120);
+      } else if (valor >= preco60) {
+        tempo = Math.floor((valor / preco60) * 60);
+      } else if (valor >= preco30) {
+        tempo = Math.floor((valor / preco30) * 30);
+      }else {
+        resultado.innerHTML = "⚠️ Valor insuficiente para estacionar.";
+        return;
+      }
+       
+
+      resultado.innerHTML = `⏱️ Tempo de estacionamento: <strong>${tempo} minutos</strong>`;
+    }
+  </script>
+
+</body>
+</html>
